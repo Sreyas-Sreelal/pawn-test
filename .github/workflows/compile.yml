@@ -50,7 +50,7 @@ jobs:
         sudo apt-get update
         sudo apt-get upgrade -y
         sudo apt-get install -y --fix-missing libc6:i386 libncurses6:i386 libstdc++6:i386 gcc-multilib g++-multilib
-        sudo ln ./.github/pawncompiler/lib/libpawnc.so -s /usr/lib/libpawnc.so
+        sudo ln -s ./.github/pawncompiler/lib/libpawnc.so /usr/lib/libpawnc.so
         chmod +x ./.github/pawncompiler/bin/pawncc
         chmod +x ./.github/pawncompiler/bin/pawndisasm
 
