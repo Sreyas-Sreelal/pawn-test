@@ -65,7 +65,7 @@ jobs:
         [[ -f ./.github/pawncompiler/bin/pawncc ]] && echo "File './github/pawncompiler/bin/pawncc' exists" || echo "File './github/pawncompiler/bin/pawncc' doesn't exist"
         [[ -f ./.github/pawncompiler/bin/pawndisasm ]] && echo "File './github/pawncompiler/bin/pawndisasm' exists" || echo "File './github/pawncompiler/bin/pawndisasm' doesn't exist"
         [[ -f ./.github/pawncompiler/lib/libpawnc.so ]] && echo "File './github/pawncompiler/lib/libpawnc.so' exists" || echo "File './github/pawncompiler/lib/libpawnc.so' doesn't exist"
-        ./.github/pawncompiler/bin/pawncc "${{env.SOURCE_FILE}}" ${{env.OPTIONS}} -D"${{env.SOURCES_PATH}}" -o"${{env.AMX_PATH}}" -i"${{env.INCLUDES_PATH}}" -i"${{env.INCLUDES_PATH}}/openmultiplayer"
+        ./.github/pawncompiler/bin/pawncc ./gamemodes/main.pwn
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
