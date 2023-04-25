@@ -46,6 +46,7 @@ jobs:
       working-directory: ${{github.workspace}}
       shell: bash
       run: |
+
         sudo dpkg --add-architecture i386
         sudo apt-get update
         sudo apt-get upgrade -y
@@ -58,6 +59,7 @@ jobs:
       working-directory: ${{github.workspace}}
       shell: bash
       run: |
+        export LD_LIBRARY_PATH=./.github/pawncompiler/lib/:$LD_LIBRARY_PATH
         [[ -d ./.github/pawncompiler/bin ]] && echo "Directory './github/pawncompiler/bin' exists" || echo "Directory './github/pawncompiler/bin' doesn't exist"
         [[ -d ./.github/pawncompiler/lib ]] && echo "Directory './github/pawncompiler/lib' exists" || echo "Directory './github/pawncompiler/lib' doesn't exist"
         [[ -f ./.github/pawncompiler/bin/pawncc ]] && echo "File './github/pawncompiler/bin/pawncc' exists" || echo "File './github/pawncompiler/bin/pawncc' doesn't exist"
