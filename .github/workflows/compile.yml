@@ -53,7 +53,7 @@ jobs:
         git clone https://github.com/openmultiplayer/compiler.git
         cd compiler
         mkdir build && cd build
-        cmake ../source/compiler -DCMAKE_C_FLAGS=-m32 -DCMAKE_BUILD_TYPE=Release
+        cmake ../source/compiler -DCMAKE_C_FLAGS="-m32 -O0 -g" -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
         make
     - name: Compiling
       working-directory: ${{github.workspace}}
