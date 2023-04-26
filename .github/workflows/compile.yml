@@ -60,7 +60,6 @@ jobs:
       shell: bash
       run: |
         export LD_LIBRARY_PATH=./compiler/build/:$LD_LIBRARY_PATH
-        ./.github/pawncompiler/bin/pawncc ./gamemodes/main.pwn -o"${{env.AMX_PATH}}"
         ./compiler/build/pawncc ./gamemodes/main.pwn -o"${{env.AMX_PATH}}"
 
     - name: Upload build artifacts
